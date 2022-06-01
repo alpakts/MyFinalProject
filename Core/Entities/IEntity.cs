@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Abstract
+namespace Core.Entities
 {
     // Ientitity interfacesini implement eden her class veritabanı classıdır
     public interface IEntity

@@ -1,4 +1,4 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,12 +6,13 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess
 {
     //generic constraint : generik kısıt
     //where T:class referans tip olmallı
     //Ientitiy Ientitiy oolmalı
-    public interface IEntitiyRepository<T> where T:class,IEntity,new()
+    //core katmanı başka bir katmanı referans almaz 
+    public interface IEntityRepository<T> where T:class,IEntity,new()
     {
                         // filtreleme yapmayı sağlar
         List<T> GetAll(Expression<Func<T,bool>> filter=null);

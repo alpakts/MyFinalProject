@@ -26,10 +26,18 @@ namespace ConsoleUI
         {
             //open closed principle
             ProductManager productManager = new ProductManager(new IEfProductDal());
-            foreach (var product in productManager.GetProductDetail())
+            if (productManager.GetProductDetail().Success==true)
             {
-                Console.WriteLine(product.ProductName+"/"+product.CategoryName);
+                foreach (var product in productManager.GetProductDetail().Data)
+                {
+                    Console.WriteLine(product.ProductName + "/" + product.CategoryName);
+                }
             }
+            else
+            {
+                Console.WriteLine(productManager.GetProductDetail().Message);
+            }
+            
         }
     }
 }

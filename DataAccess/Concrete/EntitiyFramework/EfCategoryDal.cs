@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntitiyFramework
 {
-    public class IEfCategoryDal : IEfEntityRepositoryBase<Category, NorthWindContext>, ICategoryDal
+    public class EfCategoryDal : IEfEntityRepositoryBase<Category, NorthWindContext>, ICategoryDal
     {
 
     }

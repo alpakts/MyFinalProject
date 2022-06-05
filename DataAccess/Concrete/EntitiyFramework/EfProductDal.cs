@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntitiyFramework
 {
-    public class IEfProductDal : IEfEntityRepositoryBase<Product, NorthWindContext>, IProductDal
+    public class EfProductDal : IEfEntityRepositoryBase<Product, NorthWindContext>, IProductDal
     {
 
         //NuGet

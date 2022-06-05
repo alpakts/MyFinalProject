@@ -36,13 +36,17 @@ namespace Business.Concrete
 
         public IDataResult<List<Product>> GetAll()
         {
-            if (DateTime.Now.Hour== 22)
-            {
-                return new ErrorDataResult<List<Product>>(Messages.MaintanceTime);
-            }
+            //if (DateTime.Now.Hour== 22)
+            //{
+            //    return new ErrorDataResult<List<Product>>(Messages.MaintanceTime);
+            //}
+            
+            
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductListed);
+            
             // iş kodları
             //yetkisi varmı
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductListed);
+            
         }
 
         public IDataResult<List<Product>> GetAllByCategoryId(int id)
@@ -55,9 +59,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max), "fiyatlara göre listelendi");
         }
 
-        public IDataResult<List<Product>> GetById(int productId)
+        public IDataResult<Product> GetById(int productId)
         {
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.ProductId == productId), "Ürün bulundu");
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId), "Ürün bulundu");
         }
 
         public IDataResult<List<ProductDetailDto>> GetProductDetail()

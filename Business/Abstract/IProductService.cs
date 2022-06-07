@@ -18,6 +18,7 @@ namespace Business.Abstract
         IDataResult<List<ProductDetailDto>> GetProductDetail();
         IResult Add(Product product);
         IDataResult<Product> GetById(int productId);
+        IResult Update(Product product);
     }
     // RESTful --> HTTP--> 
 }

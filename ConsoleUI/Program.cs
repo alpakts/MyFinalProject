@@ -16,7 +16,7 @@ namespace ConsoleUI
         private static void CategoryTest()
         {
             CategoryManager Cmanager = new CategoryManager(new EfCategoryDal());
-            foreach (var category in Cmanager.GetAll())
+            foreach (var category in Cmanager.GetAll().Data)
             {
                 Console.WriteLine(category.CategoryName);
             }
@@ -25,7 +25,7 @@ namespace ConsoleUI
         private static void ProductTest()
         {
             //open closed principle
-            ProductManager productManager = new ProductManager(new EfProductDal());
+            ProductManager productManager = new ProductManager(new EfProductDal(),new CategoryManager(new EfCategoryDal()));
             if (productManager.GetProductDetail().Success==true)
             {
                 foreach (var product in productManager.GetProductDetail().Data)

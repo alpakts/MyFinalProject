@@ -14,5 +14,7 @@ namespace Business.Constants
         public static string MaintanceTime= "Sunucu bakımda";
 
         public static string InvalidUnitPrice { get; internal set; }
+        public static string ProductAlreadyExists { get; internal set; }
+        public static string CategoryLimitExceed { get; internal set; }
     }
 }

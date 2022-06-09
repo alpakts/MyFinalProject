@@ -31,6 +31,7 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
         [ValidationAspect(typeof(ProductValidator))]
+        [SecuredOperation]
         public IResult Add(Product product)
         {
             // bir kategoride 10 ürün olabilir 
